@@ -1,0 +1,71 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+input {
+    border: 1px solid rgb(213, 208, 208);
+    border-radius: 5px;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 10px 0 0 0; 
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+    color: black;
+    font-weight: 100;
+}
+
+#today {
+    font-size: 50px;
+
+}
+
+
+.weatherapp {
+    max-width: 600px;
+    border: 1px solid rgb(213, 208, 208);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px auto;
+}
+
+.templink {
+    position: relative;
+    top: -20px;
+    left: -10px;
+    
+}
+
+#search-text{
+    box-shadow: 3px 3px 9px lightgrey;
+}
+
+#submit-text{
+    box-shadow: 3px 3px 9px lightgrey;
+}
+#button-current{
+    box-shadow: 3px 3px 9px lightgrey;
+}
+
+#celcius-temp{
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+img {
+    float: left;
+    display: block;
+    top: -40px;
+   
+}
+h5{
+    font-size: 15px;
+
+    
+}
