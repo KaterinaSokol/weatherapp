@@ -57,7 +57,7 @@ function ourSubmit(event){
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", ourSubmit);
 
-searchCity("Balaklia");
+searchCity("Kharkiv");
 
 function myPosition(position) {
     let apiKey = "e7dbb1a7cbf271831b301595cd51d95b";
