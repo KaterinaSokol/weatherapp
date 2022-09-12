@@ -48,6 +48,7 @@ img {
     float: left;
     display: block;
     top: -40px; 
+    margin-top: -15px;
 }
 h5{
     font-size: 15px;
