@@ -28,10 +28,10 @@ function showWeather(response){
     let descroptionElement = document.querySelector("h5");
     let temperatureElement = document.querySelector("#today");
     
-    temperatureElement.innerHTML = `${temperature}°C`;
+    temperatureElement.innerHTML = `${temperature}`;
     descroptionElement.innerHTML = `${description}`;
     windSpeedElement.innerHTML = `Wind: ${windSpeed} km/h`;
-    humidityElement.innerHTML = `Humidity: ${humidity} %`;
+    humidityElement.innerHTML = `Humidity: ${humidity}%`;
 
     document.querySelector("#city-name").innerHTML = response.data.name;
 
