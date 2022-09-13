@@ -82,7 +82,7 @@ function showFahrenheitTemp(event){
 function showCelsiusTemp(event){
     event.preventDefault();
     let ourTemp = document.querySelector(".ourTemp");
-    ourTemp.innerHTML = celsiusTemp;
+    ourTemp.innerHTML = Math.round(celsiusTemp);
 }
 
 let celsiusTemp = null;
