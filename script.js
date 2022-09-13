@@ -16,10 +16,12 @@ let changeInformation = document.querySelector("#date-time");
 changeInformation.innerHTML = `${day}, ${hours}:${minutes}`;
 
 function showWeather(response){
-    let temperature = Math.round(response.data.main.temp);
+    let temperature = Math.round(celsiusTemp);
     let description = (response.data.weather[0].description);
     let windSpeed = Math.round(response.data.wind.speed);
     let humidity = response.data.main.humidity;
+
+    celsiusTemp = response.data.main.temp;
     
     let windSpeedElement = document.querySelector("#wind");
     let humidityElement = document.querySelector("#humidity");
@@ -69,3 +71,23 @@ function currentPosition(event){
 
 let currentButton = document.querySelector("#button-current");
 currentButton.addEventListener("click", currentPosition);
+
+function showFahrenheitTemp(event){
+    event.preventDefault();
+    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+    let ourTemp = document.querySelector(".ourTemp");
+    ourTemp.innerHTML = Math.round(fahrenheitTemp); 
+}
+
+function showCelsiusTemp(event){
+    event.preventDefault();
+    let ourTemp = document.querySelector(".ourTemp");
+    ourTemp.innerHTML = celsiusTemp;
+}
+
+let celsiusTemp = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
