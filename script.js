@@ -15,9 +15,38 @@ if(hours <10){
 let changeInformation = document.querySelector("#date-time");
 changeInformation.innerHTML = `${day}, ${hours}:${minutes}`;
 
+function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+
+    let forecastHTML = `<div class="row">`;
+    let days = ["Wed", "Thu", "Fri", "Sat", "Sun", "Mon"];
+    days.forEach(function(day) {
+        forecastHTML =  forecastHTML + 
+        `
+        <div class="col-2">
+            <div class="weather-forecast-date">${day}</div>
+            <img 
+            src="http://openweathermap.org/img/wn/50d@2x.png" 
+            alt=""
+            width="45px"
+            />
+            <div class="weather-forecast-temperatures">
+                <span class="weather-forecast-temperature-max"> 25° </span>
+                <span class="weather-forecast-temperature-min"> 4° </span>
+            </div>
+        </div>
+        `;
+    })
+    
+
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+displayForecast()
+
 function showWeather(response){
     celsiusTemp = response.data.main.temp;
-    
+
     let temperature = Math.round(celsiusTemp);
     let description = (response.data.weather[0].description);
     let windSpeed = Math.round(response.data.wind.speed);
@@ -91,3 +120,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
+
