@@ -16,12 +16,12 @@ let changeInformation = document.querySelector("#date-time");
 changeInformation.innerHTML = `${day}, ${hours}:${minutes}`;
 
 function showWeather(response){
+    celsiusTemp = response.data.main.temp;
+    
     let temperature = Math.round(celsiusTemp);
     let description = (response.data.weather[0].description);
     let windSpeed = Math.round(response.data.wind.speed);
     let humidity = response.data.main.humidity;
-
-    celsiusTemp = response.data.main.temp;
     
     let windSpeedElement = document.querySelector("#wind");
     let humidityElement = document.querySelector("#humidity");
