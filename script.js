@@ -121,23 +121,5 @@ function currentPosition(event){
 let currentButton = document.querySelector("#button-current");
 currentButton.addEventListener("click", currentPosition);
 
-function showFahrenheitTemp(event){
-    event.preventDefault();
-    let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-    let ourTemp = document.querySelector(".ourTemp");
-    ourTemp.innerHTML = Math.round(fahrenheitTemp); 
-}
 
-function showCelsiusTemp(event){
-    event.preventDefault();
-    let ourTemp = document.querySelector(".ourTemp");
-    ourTemp.innerHTML = Math.round(celsiusTemp);
-}
-
-let celsiusTemp = null;
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
